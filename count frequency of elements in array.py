@@ -1,0 +1,24 @@
+def countFreq(arr):
+   
+    mp = {}
+    
+    ans = []
+
+    for num in arr:
+        mp[num] = mp.get(num, 0) + 1
+
+    for num, freq in mp.items():
+        ans.append([num, freq])
+
+    return ans
+
+
+if __name__ == "__main__":
+    arr = [10, 20, 10, 5, 20]
+
+    ans = countFreq(arr)
+
+    ans.sort(key=lambda x: x[0])
+
+    for x in ans:
+        print(x[0], x[1])
